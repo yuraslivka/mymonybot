@@ -1,5 +1,6 @@
 import config
 import logging
+from datetime import datetime
 
 from aiogram import Bot, Dispatcher, executor, types
 
@@ -27,7 +28,10 @@ async def echo(message: types.Message):
     if message.text.lower() == '5':
         await message.answer('Fuck you.')
     else:
-        await message.answer(b*5)
+        if message.text.lower() == '6':
+            await message.answer('Yurii.')
+        else:
+            await message.answer(b*6)
 
 
 # запускаем лонг поллинг
